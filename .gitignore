@@ -1,0 +1,22 @@
+# Gradle build outputs
+/build/
+/.gradle/
+
+# Gradle Wrapper
+gradle/
+gradlew
+gradlew.bat
+
+# IDE or editor-specific files
+.vscode/
+
+# OS generated files
+.DS_Store
+
+# Maven build outputs (if unused)
+mvnw
+mvnw.cmd
+pom.xml
+
+# Target directory
+/target/

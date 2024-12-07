@@ -1,7 +1,25 @@
-FROM maven:3-eclipse-temurin-17 AS build
-COPY ./ /home/app
-RUN cd /home/app && mvn clean package -Dmaven.test.skip=true
-FROM eclipse-temurin:17-alpine
-COPY --from=build /home/app/target/spring-practice-0.0.1-SNAPSHOT.jar /usr/local/lib/demo.jar
-EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/usr/local/lib/demo.jar"]
+# Build Stage (Java 21を使用)
+FROM gradle:8.11.1-jdk21 AS build
+
+# 作業ディレクトリを設定
+WORKDIR /app
+
+# 必要なファイルをコピー
+COPY build.gradle settings.gradle ./
+COPY src ./src
+
+# 依存関係の解決とビルド
+RUN gradle build --no-daemon --refresh-dependencies --stacktrace
+
+# Production Stage
+FROM openjdk:21-jdk-slim
+
+# 作業ディレクトリを設定
+WORKDIR /app
+
+# ビルド成果物（JARファイル）をコピー
+COPY --from=build /app/build/libs/*.jar app.jar
+
+# 実行コマンドを定義
+CMD ["java", "-jar", "app.jar"]
+
