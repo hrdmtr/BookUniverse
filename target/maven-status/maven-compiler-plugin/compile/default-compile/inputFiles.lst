@@ -1,0 +1,8 @@
+/Users/haradamitsuru/BookUniverse/booksuniverse/src/main/java/com/books/booksuniverse/BooksuniverseApplication.java
+/Users/haradamitsuru/BookUniverse/booksuniverse/src/main/java/com/books/booksuniverse/config/InMemoryUserDetailsService.java
+/Users/haradamitsuru/BookUniverse/booksuniverse/src/main/java/com/books/booksuniverse/config/SecurityConfig.java
+/Users/haradamitsuru/BookUniverse/booksuniverse/src/main/java/com/books/booksuniverse/controller/GreetController.java
+/Users/haradamitsuru/BookUniverse/booksuniverse/src/main/java/com/books/booksuniverse/controller/MaterialController.java
+/Users/haradamitsuru/BookUniverse/booksuniverse/src/main/java/com/books/booksuniverse/model/Material.java
+/Users/haradamitsuru/BookUniverse/booksuniverse/src/main/java/com/books/booksuniverse/repository/MaterialRepository.java
+/Users/haradamitsuru/BookUniverse/booksuniverse/src/main/java/com/books/booksuniverse/service/MaterialService.java
